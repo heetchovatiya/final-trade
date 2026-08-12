@@ -335,6 +335,7 @@ export default function HeroVisual({ mouse = { x: 0, y: 0 } }) {
           ctx.fill()
           ctx.stroke()
 
+        ctx.fillStyle = dark ? '#ffffff' : '#0d0d0d'
         ctx.fillText(hudText, boxX + 9, boxY + 16)
       }
 

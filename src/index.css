@@ -399,9 +399,7 @@ button {
 
 .logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1;
-  gap: 2px;
+  align-items: center;
   transition: transform var(--dur-hover) var(--ease-slow);
 }
 
@@ -409,20 +407,30 @@ button {
   transform: scale(1.04);
 }
 
-.logo-mark {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.45rem;
-  letter-spacing: 0.08em;
-  color: var(--gold);
+.logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
 }
 
-.logo-sub {
-  font-size: 0.58rem;
-  letter-spacing: 0.32em;
-  color: var(--muted);
-  font-weight: 500;
-  transition: color var(--dur-theme) var(--ease-slow);
+.logo--compact .logo-img {
+  height: 44px;
+}
+
+.img-light-mode {
+  display: block;
+}
+
+.img-dark-mode {
+  display: none;
+}
+
+[data-theme='dark'] .img-light-mode {
+  display: none;
+}
+
+[data-theme='dark'] .img-dark-mode {
+  display: block;
 }
 
 .nav {

@@ -132,7 +132,7 @@ export default function Footer() {
             </div>
             <span className="cd-desc">Official company information and contact details.</span>
           </div>
-          
+
           <div className="company-details-grid">
             <div className="cd-box">
               <span className="cd-label">Company</span>
@@ -147,8 +147,16 @@ export default function Footer() {
               <span className="cd-value">Support@exploremarketslimited.com</span>
             </div>
             <div className="cd-box">
+              <span className="cd-label">Contact Number</span>
+              <span className="cd-value">+44 7459333264</span>
+            </div>
+            <div className="cd-box">
               <span className="cd-label">Registered Address</span>
-              <span className="cd-value">Ground Floor, La Place Creole Building, Rodney Village, Rodney Bay, Gros-Islet, Saint Lucia.</span>
+              <span className="cd-value">Unit 1, La Place Creole Building, Rodney Village, Rodney Bay, Gros-Islet, Saint Lucia.</span>
+            </div>
+            <div className="cd-box">
+              <span className="cd-label">Physical Office Address</span>
+              <span className="cd-value">No.6 Grand Riviere Road, Monchy, Gros Islet, Saint Lucia</span>
             </div>
           </div>
         </div>
