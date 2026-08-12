@@ -10,7 +10,7 @@ export default function Press() {
       <PageHero title="Press & Media" subtitle="Latest news, announcements, and media resources." />
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}>
+          <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}>
             
             <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={0}>
               <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="News article" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />

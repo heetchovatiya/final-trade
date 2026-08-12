@@ -19,7 +19,7 @@ export default function CopyTrading() {
             </div>
           </Reveal>
 
-          <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+          <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
             <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={100}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>How It Works</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Browse our leaderboard of verified strategy providers. Select a trader whose risk profile matches yours, and automatically duplicate their trades in your own account in real-time.</p>

@@ -19,7 +19,7 @@ export default function Commodities() {
             </div>
           </Reveal>
 
-          <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+          <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
             <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={100}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Precious Metals</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Trade Gold (XAU) and Silver (XAG) against major currencies as a safe haven or inflation hedge with exceptional execution speeds.</p>

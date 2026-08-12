@@ -19,7 +19,7 @@ export default function Education() {
             </div>
           </Reveal>
 
-          <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+          <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
             <Reveal as="div" className="hover-lift" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={100}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Beginner's Guide to Forex</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Learn the fundamentals of currency trading, understand pips, leverage, and how to execute your first trade safely and confidently.</p>
