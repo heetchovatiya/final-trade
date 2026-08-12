@@ -88,7 +88,7 @@ export default function Hero({ onOpenSignup }) {
       onMouseLeave={onLeave}
     >
       {/* Full-bleed Interactive Stock Market Background */}
-      <HeroVisual mouse={mouse} />
+      <HeroVisual mouse={mouse} tickers={tickers} />
 
       <div className="container hero-layout">
         <div className="hero-copy">
@@ -141,7 +141,7 @@ export default function Hero({ onOpenSignup }) {
           </div>
 
           <div id="markets" className="ticker-grid" aria-label="Easy access global assets">
-            {tickers.map((t) => {
+            {tickers.filter(t => t.inGrid).map((t) => {
               const up = t.change >= 0
               return (
                 <article key={t.pair} className="ticker-card hover-lift">
