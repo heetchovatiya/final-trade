@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react'
 import { Reveal } from '../hooks/useReveal'
 import HeroVisual from './HeroVisual'
 import { useTickers, formatPrice } from '../hooks/useTickers'
+import mt5LogoSmall from '../assets/metatrader-5/Logo/metatrader5-white.png'
 
 const TRUST = [
   'Segregated client funds',
@@ -113,6 +114,11 @@ export default function Hero({ onOpenSignup }) {
             <a href="https://www.mql5.com/en/market/mt5/indicator" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
               See Platforms
             </a>
+          </Reveal>
+
+          <Reveal className="hero-platforms" delay={560} style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span style={{ fontSize: '0.8rem', color: 'var(--muted)', letterSpacing: '0.05em', fontWeight: 600 }}>OFFICIAL PLATFORM:</span>
+            <img src={mt5LogoSmall} alt="MetaTrader 5" style={{ height: '22px', objectFit: 'contain', opacity: 0.85 }} />
           </Reveal>
 
           <Reveal as="ul" className="hero-trust" delay={640}>

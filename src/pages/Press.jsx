@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import PageHero from '../components/PageHero'
 import { Reveal } from '../hooks/useReveal'
+import mt5Screenshot from '../assets/metatrader-5/Screenshots/12_market.png'
 
 export default function Press() {
   useEffect(() => { window.scrollTo(0, 0) }, [])
@@ -13,7 +14,7 @@ export default function Press() {
           <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}>
             
             <Reveal as="article" className="premium-card" delay={0}>
-              <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="News article" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+              <img src={mt5Screenshot} alt="MetaTrader 5 platform" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
               <div style={{ padding: '32px' }}>
                 <span style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600 }}>October 12, 2026</span>
                 <h3 style={{ color: 'var(--ink)', margin: '12px 0', fontSize: '1.4rem' }}>Explore Markets Limited Launches Advanced MetaTrader 5 Integration</h3>
