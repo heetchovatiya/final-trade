@@ -18,7 +18,7 @@ export default function Careers() {
             {/* Open Roles */}
             <div>
               <Reveal as="h2" style={{ marginBottom: '32px' }}>Open Positions</Reveal>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
                 {['Senior React Developer', 'Quantitative Analyst', 'Customer Support Specialist'].map((job, idx) => (
                   <Reveal key={job} as="div" className="hover-lift" style={{ padding: '24px', background: 'var(--card-bg)', borderRadius: '12px', border: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: 'var(--shadow)' }} delay={idx * 100}>
                     <div>
