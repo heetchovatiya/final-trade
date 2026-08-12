@@ -4,10 +4,10 @@ import Logo from './Logo'
 
 const LINKS = [
   { href: '#asset-markets', label: 'Markets' },
-  { href: '#platforms', label: 'Platforms' },
+  { href: '#advantages', label: 'Advantages' },
+  { href: '#screener', label: 'Screener' },
   { href: '#accounts', label: 'Accounts' },
-  { href: '#tools', label: 'Tools' },
-  { href: '#faq', label: 'Help' },
+  { href: '#why-us', label: 'Why Us' },
 ]
 
 export default function Header({ onOpenSignup }) {
