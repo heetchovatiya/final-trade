@@ -20,15 +20,15 @@ export default function Indices() {
           </Reveal>
 
           <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={100}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={100}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Major Global Markets</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Access top indices like the US500, US30, UK100, and GER40 from a single platform with ultra-low latency.</p>
             </Reveal>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={200}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={200}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Go Long or Short</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Capitalize on both rising and falling equity markets without borrowing physical shares or paying stockbroker fees.</p>
             </Reveal>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={300}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={300}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Low Margins</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Increase your market exposure with competitive leverage ratios designed specifically for professional index traders.</p>
             </Reveal>

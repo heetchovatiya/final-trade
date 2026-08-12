@@ -20,15 +20,15 @@ export default function CFDs() {
           </Reveal>
 
           <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={100}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={100}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>What is a CFD?</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>A CFD allows you to speculate on the rising or falling prices of fast-moving global financial markets without actually owning the underlying asset.</p>
             </Reveal>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={200}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={200}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Leveraged Trading</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Magnify your trading capital. Note that while leverage can increase potential returns, it also amplifies potential losses. Trade responsibly.</p>
             </Reveal>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={300}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={300}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Flexible Position Sizing</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Trade micro-lots to manage your risk carefully, or scale up to large institutional order sizes seamlessly with deep liquidity.</p>
             </Reveal>

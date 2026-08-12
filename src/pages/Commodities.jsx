@@ -20,15 +20,15 @@ export default function Commodities() {
           </Reveal>
 
           <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={100}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={100}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Precious Metals</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Trade Gold (XAU) and Silver (XAG) against major currencies as a safe haven or inflation hedge with exceptional execution speeds.</p>
             </Reveal>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={200}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={200}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Energies</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Speculate on the price movements of US Crude Oil (WTI) and UK Brent with highly competitive margins and low latency.</p>
             </Reveal>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={300}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={300}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>No Physical Delivery</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Trade commodity CFDs without the hassle of taking physical ownership of the underlying assets. Trade price action directly.</p>
             </Reveal>

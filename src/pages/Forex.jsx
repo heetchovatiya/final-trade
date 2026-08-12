@@ -20,15 +20,15 @@ export default function Forex() {
           </Reveal>
 
           <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={100}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={100}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Deep Liquidity</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Access pricing derived from top-tier liquidity providers, ensuring minimal slippage and consistent execution even during volatile market events.</p>
             </Reveal>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={200}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={200}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>Spreads from 0.0 Pips</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Trade the world's most liquid pairs like EUR/USD with spreads starting from absolutely zero on our Raw accounts.</p>
             </Reveal>
-            <Reveal as="div" className="hover-glow" style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }} delay={300}>
+            <Reveal as="div" className="premium-card" style={{ padding: '40px' }} delay={300}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '16px', fontSize: '1.4rem' }}>24/5 Market Access</h3>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6' }}>Take advantage of continuous trading opportunities across global trading sessions from Sydney to New York.</p>
             </Reveal>
