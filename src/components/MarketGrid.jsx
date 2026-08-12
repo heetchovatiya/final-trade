@@ -20,7 +20,7 @@ const MARKETS = [
     icon: '↗',
   },
   {
-    title: 'Crypto CFDs',
+    title: 'CFDs',
     desc: 'Trade leading digital assets as CFDs without holding the underlying coin.',
     meta: '10+ coins',
     icon: '₿',

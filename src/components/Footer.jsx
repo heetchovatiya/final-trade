@@ -7,7 +7,7 @@ const COLS = [
   },
   {
     title: 'Markets',
-    links: ['Forex', 'Commodities', 'Indices', 'Crypto CFDs'],
+    links: ['Forex', 'Commodities', 'Indices', 'CFDs'],
   },
   {
     title: 'Trading',
