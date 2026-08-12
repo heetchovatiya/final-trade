@@ -73,9 +73,9 @@ export default function Advantages() {
             </div>
             <h3>24/7 withdrawals</h3>
             <p>Request funds any time — processed with institutional speed.</p>
-            <a href="#signup" className="btn btn-gold btn-sm">
+            <button disabled className="btn btn-gold btn-sm" style={{ cursor: 'not-allowed', opacity: 0.5 }}>
               Withdraw
-            </a>
+            </button>
           </Reveal>
 
           <Reveal as="article" className="bento-card bento-stable hover-lift" delay={200}>
