@@ -3,11 +3,11 @@ import { useTheme } from '../hooks/useTheme'
 import Logo from './Logo'
 
 const LINKS = [
-  { href: '#asset-markets', label: 'Markets' },
-  { href: '#advantages', label: 'Advantages' },
-  { href: '#screener', label: 'Screener' },
-  { href: '#accounts', label: 'Accounts' },
-  { href: '#why-us', label: 'Why Us' },
+  { href: '/#asset-markets', label: 'Markets' },
+  { href: '/#advantages', label: 'Advantages' },
+  { href: '/#screener', label: 'Screener' },
+  { href: '/#accounts', label: 'Accounts' },
+  { href: '/#why-us', label: 'Why Us' },
 ]
 
 export default function Header({ onOpenSignup }) {

@@ -1,23 +1,13 @@
 import { useCallback, useState } from 'react'
 import { ThemeProvider } from './hooks/useTheme'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import Partners from './components/Partners'
-import MarketGrid from './components/MarketGrid'
-import Advantages from './components/Advantages'
-import Showcase from './components/Showcase'
-import Screener from './components/Screener'
-import AccountTypes from './components/AccountTypes'
-import Steps from './components/Steps'
-import ToolsInsights from './components/ToolsInsights'
-import Results from './components/Results'
-import Testimonials from './components/Testimonials'
-import Protected from './components/Protected'
-import FAQ from './components/FAQ'
-import Support from './components/Support'
-import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 import SignupModal from './components/SignupModal'
+
+// Pages
+import Home from './pages/Home'
+import GenericPage from './pages/GenericPage'
 
 function Page() {
   const [signupOpen, setSignupOpen] = useState(false)
@@ -25,28 +15,34 @@ function Page() {
   const closeSignup = useCallback(() => setSignupOpen(false), [])
 
   return (
-    <>
+    <BrowserRouter>
       <Header onOpenSignup={openSignup} />
-      <main>
-        <Hero onOpenSignup={openSignup} />
-        {/* <Partners /> */}
-        <MarketGrid onOpenSignup={openSignup} />
-        <Advantages />
-        <Screener onOpenSignup={openSignup} />
-        {/* <Showcase /> */}
-        <AccountTypes onOpenSignup={openSignup} />
-        {/* <Steps /> */}
-        {/* <ToolsInsights /> */}
-        <Results onOpenSignup={openSignup} />
-        {/* <Testimonials /> */}
-        {/* <Protected /> */}
-        {/* <FAQ /> */}
-        {/* <Support /> */}
-        {/* <FinalCTA onOpenSignup={openSignup} /> */}
-      </main>
+      
+      <Routes>
+        <Route path="/" element={<Home onOpenSignup={openSignup} />} />
+        
+        {/* Company Pages */}
+        <Route path="/about" element={<GenericPage title="About Us" />} />
+        <Route path="/careers" element={<GenericPage title="Careers" />} />
+        <Route path="/press" element={<GenericPage title="Press" />} />
+        <Route path="/contact" element={<GenericPage title="Contact" />} />
+
+        {/* Markets Pages */}
+        <Route path="/markets/forex" element={<GenericPage title="Forex Trading" />} />
+        <Route path="/markets/commodities" element={<GenericPage title="Commodities Trading" />} />
+        <Route path="/markets/indices" element={<GenericPage title="Indices Trading" />} />
+        <Route path="/markets/cfds" element={<GenericPage title="CFD Trading" />} />
+
+        {/* Trading Pages */}
+        <Route path="/trading/accounts" element={<GenericPage title="Account Types" />} />
+        <Route path="/trading/spreads" element={<GenericPage title="Spreads & Fees" />} />
+        <Route path="/trading/copy-trading" element={<GenericPage title="Copy Trading" />} />
+        <Route path="/trading/education" element={<GenericPage title="Education" />} />
+      </Routes>
+
       <Footer />
       <SignupModal open={signupOpen} onClose={closeSignup} />
-    </>
+    </BrowserRouter>
   )
 }
 

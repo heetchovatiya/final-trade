@@ -1,17 +1,33 @@
 import Logo from './Logo'
+import { Link } from 'react-router-dom'
 
 const COLS = [
   {
     title: 'Company',
-    links: ['About Us', 'Careers', 'Press', 'Contact'],
+    links: [
+      { name: 'About Us', path: '/about' },
+      { name: 'Careers', path: '/careers' },
+      { name: 'Press', path: '/press' },
+      { name: 'Contact', path: '/contact' }
+    ],
   },
   {
     title: 'Markets',
-    links: ['Forex', 'Commodities', 'Indices', 'CFDs'],
+    links: [
+      { name: 'Forex', path: '/markets/forex' },
+      { name: 'Commodities', path: '/markets/commodities' },
+      { name: 'Indices', path: '/markets/indices' },
+      { name: 'CFDs', path: '/markets/cfds' }
+    ],
   },
   {
     title: 'Trading',
-    links: ['Account Types', 'Spreads & Fees', 'Copy Trading', 'Education'],
+    links: [
+      { name: 'Account Types', path: '/trading/accounts' },
+      { name: 'Spreads & Fees', path: '/trading/spreads' },
+      { name: 'Copy Trading', path: '/trading/copy-trading' },
+      { name: 'Education', path: '/trading/education' }
+    ],
   }
 ]
 
@@ -21,13 +37,6 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <Logo variant="dark" />
-          {/* <div className="socials" aria-label="Social links">
-            {['f', '𝕏', 'in', '◎'].map((s) => (
-              <a key={s} href="#" aria-label="Social">
-                {s}
-              </a>
-            ))}
-          </div> */}
         </div>
 
         <div className="footer-cols">
@@ -35,9 +44,9 @@ export default function Footer() {
             <div key={col.title}>
               <h4>{col.title}</h4>
               {col.links.map((l) => (
-                <a key={l} href="#">
-                  {l}
-                </a>
+                <Link key={l.name} to={l.path} onClick={() => window.scrollTo(0, 0)}>
+                  {l.name}
+                </Link>
               ))}
             </div>
           ))}
