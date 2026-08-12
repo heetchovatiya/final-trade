@@ -13,7 +13,7 @@ export default function Commodities() {
           
           <Reveal as="div" delay={0} style={{ width: '100%', height: '350px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', marginBottom: '64px', boxShadow: 'var(--shadow)', position: 'relative' }}>
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.1))', zIndex: 1 }} />
-            <img src="https://images.unsplash.com/photo-1574688825227-2c67d643ceab?w=1200&q=80" alt="Gold bars and commodities" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?w=1200&q=80" alt="Gold bars and commodities" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', top: '50%', left: '40px', transform: 'translateY(-50%)', zIndex: 2, color: 'white' }}>
               <h2 style={{ fontSize: '2.5rem', marginBottom: '8px' }}>Hedge Against<br/><span className="gold">Inflation</span></h2>
             </div>

@@ -32,7 +32,7 @@ export default function Press() {
             </Reveal>
 
             <Reveal as="article" className="premium-card" delay={300}>
-              <img src="https://images.unsplash.com/photo-1574688825227-2c67d643ceab?w=800&q=80" alt="Commodities expansion" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+              <img src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?w=800&q=80" alt="Commodities expansion" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
               <div style={{ padding: '32px' }}>
                 <span style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600 }}>August 22, 2026</span>
                 <h3 style={{ color: 'var(--ink)', margin: '12px 0', fontSize: '1.4rem' }}>Expanding Commodity Offerings for 2026</h3>
