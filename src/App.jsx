@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import SignupModal from './components/SignupModal'
+import Mql5Ticker from './components/Mql5Ticker'
 
 // Pages
 import Home from './pages/Home'
@@ -27,6 +28,7 @@ function Page() {
 
   return (
     <BrowserRouter>
+      <Mql5Ticker />
       <Header onOpenSignup={openSignup} />
       
       <Routes>
