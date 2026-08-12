@@ -10,22 +10,35 @@ export default function Press() {
       <PageHero title="Press & Media" subtitle="Latest news, announcements, and media resources." />
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-            <Reveal as="article" style={{ padding: '32px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)' }} delay={0}>
-              <span style={{ color: 'var(--muted)', fontSize: '0.85rem' }}>October 12, 2026</span>
-              <h3 style={{ color: 'var(--gold)', margin: '12px 0' }}>Explore Markets Limited Launches Advanced MetaTrader 5 Integration</h3>
-              <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>Traders can now experience lightning-fast execution and advanced charting tools with our seamless MT5 rollout globally.</p>
+          <div style={{ display: 'grid', gap: '32px', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}>
+            
+            <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={0}>
+              <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="News article" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+              <div style={{ padding: '32px' }}>
+                <span style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600 }}>October 12, 2026</span>
+                <h3 style={{ color: 'var(--ink)', margin: '12px 0', fontSize: '1.4rem' }}>Explore Markets Limited Launches Advanced MetaTrader 5 Integration</h3>
+                <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.6' }}>Traders can now experience lightning-fast execution and advanced charting tools with our seamless MT5 rollout globally.</p>
+              </div>
             </Reveal>
-            <Reveal as="article" style={{ padding: '32px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)' }} delay={150}>
-              <span style={{ color: 'var(--muted)', fontSize: '0.85rem' }}>September 04, 2026</span>
-              <h3 style={{ color: 'var(--gold)', margin: '12px 0' }}>Industry Recognition: Best ECN Broker 2026</h3>
-              <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>We are proud to announce that we have been awarded Best ECN Broker at the Global Financial Expo in recognition of our tight spreads.</p>
+
+            <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={150}>
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="Awards" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+              <div style={{ padding: '32px' }}>
+                <span style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600 }}>September 04, 2026</span>
+                <h3 style={{ color: 'var(--ink)', margin: '12px 0', fontSize: '1.4rem' }}>Industry Recognition: Best ECN Broker 2026</h3>
+                <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.6' }}>We are proud to announce that we have been awarded Best ECN Broker at the Global Financial Expo in recognition of our tight spreads.</p>
+              </div>
             </Reveal>
-            <Reveal as="article" style={{ padding: '32px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)' }} delay={300}>
-              <span style={{ color: 'var(--muted)', fontSize: '0.85rem' }}>August 22, 2026</span>
-              <h3 style={{ color: 'var(--gold)', margin: '12px 0' }}>Expanding Commodity Offerings</h3>
-              <p style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>We have officially added 20 new agricultural and energy commodity CFDs to provide more portfolio diversification options.</p>
+
+            <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={300}>
+              <img src="https://images.unsplash.com/photo-1574688825227-2c67d643ceab?w=800&q=80" alt="Commodities expansion" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+              <div style={{ padding: '32px' }}>
+                <span style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600 }}>August 22, 2026</span>
+                <h3 style={{ color: 'var(--ink)', margin: '12px 0', fontSize: '1.4rem' }}>Expanding Commodity Offerings for 2026</h3>
+                <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.6' }}>We have officially added 20 new agricultural and energy commodity CFDs to provide more portfolio diversification options.</p>
+              </div>
             </Reveal>
+
           </div>
         </div>
       </section>
