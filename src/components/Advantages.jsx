@@ -56,8 +56,8 @@ export default function Advantages() {
 
           <Reveal as="article" className="bento-card bento-spread hover-lift" delay={150}>
             <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80"
-              alt="Trader reviewing markets on phone"
+              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80"
+              alt="Trading charts on screen"
               loading="lazy"
             />
             <div className="bento-overlay">
@@ -88,8 +88,8 @@ export default function Advantages() {
 
           <Reveal as="article" className="bento-card bento-copytrade hover-lift" delay={350}>
             <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80"
-              alt="Copy trading analytics dashboard"
+              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=700&q=80"
+              alt="Abstract financial network"
               loading="lazy"
             />
             <div className="bento-overlay">

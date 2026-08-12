@@ -79,8 +79,14 @@ export default function HeroVisual({ mouse = { x: 0, y: 0 } }) {
       smoothMouse.current.x += (target.x - smoothMouse.current.x) * 0.08
       smoothMouse.current.y += (target.y - smoothMouse.current.y) * 0.08
 
-      const mx = ((smoothMouse.current.x + 1) / 2) * width
-      const my = ((smoothMouse.current.y + 1) / 2) * height
+      let mx = ((smoothMouse.current.x + 1) / 2) * width
+      let my = ((smoothMouse.current.y + 1) / 2) * height
+
+      // Disable all touch/pointer tracking on mobile by pushing target offscreen
+      if (window.innerWidth < 768) {
+        mx = -1000
+        my = -1000
+      }
 
       ctx.clearRect(0, 0, width, height)
 
@@ -273,8 +279,8 @@ export default function HeroVisual({ mouse = { x: 0, y: 0 } }) {
         }
       })
 
-      // 7. Interactive Mouse Crosshair HUD & Dynamic Price Badge
-      if (mx > 0 && mx < width && my > 0 && my < height) {
+      // 7. Interactive Mouse Crosshair HUD & Dynamic Price Badge (Desktop Only)
+      if (window.innerWidth >= 768 && mx > 0 && mx < width && my > 0 && my < height) {
         ctx.setLineDash([3, 4])
         ctx.strokeStyle = dark ? 'rgba(197, 160, 89, 0.35)' : 'rgba(184, 134, 11, 0.45)'
         ctx.lineWidth = 1
@@ -315,21 +321,20 @@ export default function HeroVisual({ mouse = { x: 0, y: 0 } }) {
         // Floating HUD Price Box
         const calculatedPrice = (4800 + (1 - my / height) * 250).toFixed(2)
         const hudText = `ORDER #8492 · $${calculatedPrice}  ▲ +2.45%`
-        ctx.font = '600 11px system-ui, -apple-system, sans-serif'
-        const textWidth = ctx.measureText(hudText).width
+          ctx.font = '600 11px system-ui, -apple-system, sans-serif'
+          const textWidth = ctx.measureText(hudText).width
 
-        const boxX = Math.min(mx + 16, width - textWidth - 28)
-        const boxY = Math.max(my - 28, 20)
+          const boxX = Math.min(mx + 16, width - textWidth - 28)
+          const boxY = Math.max(my - 28, 20)
 
-        ctx.fillStyle = dark ? 'rgba(11, 14, 20, 0.94)' : 'rgba(255, 255, 255, 0.95)'
-        ctx.strokeStyle = dark ? 'rgba(197, 160, 89, 0.45)' : 'rgba(197, 160, 89, 0.4)'
-        ctx.lineWidth = 1
-        ctx.beginPath()
-        ctx.roundRect(boxX, boxY, textWidth + 18, 24, 6)
-        ctx.fill()
-        ctx.stroke()
+          ctx.fillStyle = dark ? 'rgba(11, 14, 20, 0.94)' : 'rgba(255, 255, 255, 0.95)'
+          ctx.strokeStyle = dark ? 'rgba(197, 160, 89, 0.45)' : 'rgba(197, 160, 89, 0.4)'
+          ctx.lineWidth = 1
+          ctx.beginPath()
+          ctx.roundRect(boxX, boxY, textWidth + 18, 24, 6)
+          ctx.fill()
+          ctx.stroke()
 
-        ctx.fillStyle = dark ? '#f0d78c' : '#0f172a'
         ctx.fillText(hudText, boxX + 9, boxY + 16)
       }
 

@@ -316,6 +316,35 @@ export default function Screener({ onOpenSignup }) {
   return (
     <section className="screener-section section" id="screener">
       <div className="container">
+        <style>
+          {`
+            @media (max-width: 768px) {
+              .screener-title {
+                margin-top: -20px;
+                line-height: 1.4;
+              }
+              .screener-title .gold {
+                display: block !important;
+                margin-top: 12px;
+              }
+              .screener-table-card,
+              .screener-chart-card {
+                min-width: 0;
+                width: 100%;
+                max-width: 100vw;
+              }
+              .screener-table-scroll {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                width: 100%;
+              }
+              .chart-canvas-wrapper {
+                width: 100%;
+                overflow: hidden;
+              }
+            }
+          `}
+        </style>
         <Reveal as="span" className="screener-subtitle">
           — REAL-TIME FINANCIAL SCREENER —
         </Reveal>
@@ -367,8 +396,8 @@ export default function Screener({ onOpenSignup }) {
               </div>
             </div>
 
-            <div className="screener-table-scroll">
-              <table className="screener-table">
+            <div className="screener-table-scroll" style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', maxWidth: '100%' }}>
+              <table className="screener-table" style={{ width: '100%', minWidth: '600px' }}>
                 <thead>
                   <tr>
                     <th>INSTRUMENT</th>
@@ -494,8 +523,8 @@ export default function Screener({ onOpenSignup }) {
             </div>
 
             {/* Sparkline Canvas Area */}
-            <div className="chart-canvas-wrapper" aria-label="Interactive chart visualization">
-              <svg viewBox="0 0 340 180" className="chart-svg" preserveAspectRatio="none">
+            <div className="chart-canvas-wrapper" aria-label="Interactive chart visualization" style={{ width: '100%', maxWidth: '100%', overflow: 'hidden' }}>
+              <svg viewBox="0 0 340 180" className="chart-svg" preserveAspectRatio="none" style={{ width: '100%', minHeight: '180px' }}>
                 <defs>
                   <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#C5A059" stopOpacity="0.28" />
@@ -563,24 +592,6 @@ export default function Screener({ onOpenSignup }) {
                   style={{ width: `${sentiment.sellers}%` }}
                 ></div>
               </div>
-            </div>
-
-            {/* Action CTAs */}
-            <div className="chart-cta-buttons">
-              <button
-                type="button"
-                className="chart-btn-sell"
-                onClick={onOpenSignup}
-              >
-                SELL {selectedInstrument.symbol.split('/')[0]}
-              </button>
-              <button
-                type="button"
-                className="chart-btn-buy"
-                onClick={onOpenSignup}
-              >
-                BUY {selectedInstrument.symbol.split('/')[0]}
-              </button>
             </div>
           </Reveal>
         </div>

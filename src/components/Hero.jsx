@@ -1,6 +1,7 @@
 import { useCallback, useRef, useState } from 'react'
 import { Reveal } from '../hooks/useReveal'
 import HeroVisual from './HeroVisual'
+import { useTickers, formatPrice } from '../hooks/useTickers'
 
 const TRUST = [
   'Segregated client funds',
@@ -61,7 +62,7 @@ const HERO_ASSETS = [
 export default function Hero({ onOpenSignup }) {
   const heroRef = useRef(null)
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
-  const [activeAssetId, setActiveAssetId] = useState('xauusd')
+  const tickers = useTickers()
 
   const onMove = useCallback((e) => {
     const el = heroRef.current
@@ -133,9 +134,9 @@ export default function Hero({ onOpenSignup }) {
             EASY ACCESS TO 1,400+ GLOBAL ASSETS
           </div>
 
-          <div id="markets" className="asset-access-grid" aria-label="Easy access global assets">
-            {HERO_ASSETS.map((asset) => {
-              const isActive = activeAssetId === asset.id
+          <div id="markets" className="ticker-grid" aria-label="Easy access global assets">
+            {tickers.map((t) => {
+              const up = t.change >= 0
               return (
                 <article key={t.pair} className="ticker-card hover-lift">
                   <div
