@@ -21,13 +21,13 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <Logo variant="dark" />
-          <div className="socials" aria-label="Social links">
+          {/* <div className="socials" aria-label="Social links">
             {['f', '𝕏', 'in', '◎'].map((s) => (
               <a key={s} href="#" aria-label="Social">
                 {s}
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div className="footer-cols">
