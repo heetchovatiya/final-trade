@@ -11,29 +11,29 @@ export default function About() {
       <section className="section">
         <div className="container">
           
-          <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+          <div className="page-grid page-grid--cards">
             
             <Reveal as="article" className="premium-card" delay={100}>
               <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Our Mission" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
-              <div style={{ padding: '32px' }}>
-                <h3 style={{ color: 'var(--gold)', marginBottom: '16px', fontSize: '1.5rem' }}>Our Mission</h3>
-                <p style={{ color: 'var(--muted)', lineHeight: '1.7' }}>To democratize access to institutional-grade liquidity, offering traders of all levels a robust, transparent, and ultra-fast trading environment. We aim to break down the barriers between retail traders and top-tier execution.</p>
+              <div className="card-body">
+                <h3 className="card-title">Our Mission</h3>
+                <p className="card-text">To democratize access to institutional-grade liquidity, offering traders of all levels a robust, transparent, and ultra-fast trading environment. We aim to break down the barriers between retail traders and top-tier execution.</p>
               </div>
             </Reveal>
 
             <Reveal as="article" className="premium-card" delay={200}>
               <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80" alt="Core Values" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
-              <div style={{ padding: '32px' }}>
-                <h3 style={{ color: 'var(--gold)', marginBottom: '16px', fontSize: '1.5rem' }}>Core Values</h3>
-                <p style={{ color: 'var(--muted)', lineHeight: '1.7' }}>Integrity, innovation, and client success. We prioritize the security of your funds and the reliability of our platforms above all else, maintaining strict regulatory compliance and segregated client accounts.</p>
+              <div className="card-body">
+                <h3 className="card-title">Core Values</h3>
+                <p className="card-text">Integrity, innovation, and client success. We prioritize the security of your funds and the reliability of our platforms above all else, maintaining strict regulatory compliance and segregated client accounts.</p>
               </div>
             </Reveal>
 
             <Reveal as="article" className="premium-card" delay={300}>
               <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Global Reach" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
-              <div style={{ padding: '32px' }}>
-                <h3 style={{ color: 'var(--gold)', marginBottom: '16px', fontSize: '1.5rem' }}>Global Reach</h3>
-                <p style={{ color: 'var(--muted)', lineHeight: '1.7' }}>Registered in Saint Lucia, we serve a global clientele, bridging the gap between retail traders and top-tier global financial markets with localized support in multiple languages, 24/5.</p>
+              <div className="card-body">
+                <h3 className="card-title">Global Reach</h3>
+                <p className="card-text">Registered in Saint Lucia, we serve a global clientele, bridging the gap between retail traders and top-tier global financial markets with localized support in multiple languages, 24/5.</p>
               </div>
             </Reveal>
 
