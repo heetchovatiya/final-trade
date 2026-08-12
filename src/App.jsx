@@ -7,7 +7,18 @@ import SignupModal from './components/SignupModal'
 
 // Pages
 import Home from './pages/Home'
-import GenericPage from './pages/GenericPage'
+import About from './pages/About'
+import Careers from './pages/Careers'
+import Press from './pages/Press'
+import Contact from './pages/Contact'
+import Forex from './pages/Forex'
+import Commodities from './pages/Commodities'
+import Indices from './pages/Indices'
+import CFDs from './pages/CFDs'
+import AccountTypesPage from './pages/AccountTypesPage'
+import SpreadsFees from './pages/SpreadsFees'
+import CopyTrading from './pages/CopyTrading'
+import Education from './pages/Education'
 
 function Page() {
   const [signupOpen, setSignupOpen] = useState(false)
@@ -22,22 +33,22 @@ function Page() {
         <Route path="/" element={<Home onOpenSignup={openSignup} />} />
         
         {/* Company Pages */}
-        <Route path="/about" element={<GenericPage title="About Us" />} />
-        <Route path="/careers" element={<GenericPage title="Careers" />} />
-        <Route path="/press" element={<GenericPage title="Press" />} />
-        <Route path="/contact" element={<GenericPage title="Contact" />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/press" element={<Press />} />
+        <Route path="/contact" element={<Contact />} />
 
         {/* Markets Pages */}
-        <Route path="/markets/forex" element={<GenericPage title="Forex Trading" />} />
-        <Route path="/markets/commodities" element={<GenericPage title="Commodities Trading" />} />
-        <Route path="/markets/indices" element={<GenericPage title="Indices Trading" />} />
-        <Route path="/markets/cfds" element={<GenericPage title="CFD Trading" />} />
+        <Route path="/markets/forex" element={<Forex />} />
+        <Route path="/markets/commodities" element={<Commodities />} />
+        <Route path="/markets/indices" element={<Indices />} />
+        <Route path="/markets/cfds" element={<CFDs />} />
 
         {/* Trading Pages */}
-        <Route path="/trading/accounts" element={<GenericPage title="Account Types" />} />
-        <Route path="/trading/spreads" element={<GenericPage title="Spreads & Fees" />} />
-        <Route path="/trading/copy-trading" element={<GenericPage title="Copy Trading" />} />
-        <Route path="/trading/education" element={<GenericPage title="Education" />} />
+        <Route path="/trading/accounts" element={<AccountTypesPage />} />
+        <Route path="/trading/spreads" element={<SpreadsFees />} />
+        <Route path="/trading/copy-trading" element={<CopyTrading />} />
+        <Route path="/trading/education" element={<Education />} />
       </Routes>
 
       <Footer />
