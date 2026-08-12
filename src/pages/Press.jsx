@@ -12,7 +12,7 @@ export default function Press() {
         <div className="container">
           <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))' }}>
             
-            <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={0}>
+            <Reveal as="article" className="premium-card" delay={0}>
               <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="News article" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
               <div style={{ padding: '32px' }}>
                 <span style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600 }}>October 12, 2026</span>
@@ -21,7 +21,7 @@ export default function Press() {
               </div>
             </Reveal>
 
-            <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={150}>
+            <Reveal as="article" className="premium-card" delay={150}>
               <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="Awards" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
               <div style={{ padding: '32px' }}>
                 <span style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600 }}>September 04, 2026</span>
@@ -30,7 +30,7 @@ export default function Press() {
               </div>
             </Reveal>
 
-            <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={300}>
+            <Reveal as="article" className="premium-card" delay={300}>
               <img src="https://images.unsplash.com/photo-1574688825227-2c67d643ceab?w=800&q=80" alt="Commodities expansion" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
               <div style={{ padding: '32px' }}>
                 <span style={{ color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600 }}>August 22, 2026</span>

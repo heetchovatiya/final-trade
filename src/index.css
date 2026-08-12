@@ -3830,3 +3830,19 @@ a,
     filter: none;
   }
 }
+
+.premium-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.premium-card:hover {
+  background: rgba(197, 160, 89, 0.05) !important;
+  border-color: rgba(197, 160, 89, 0.5) !important;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(197, 160, 89, 0.28);
+}

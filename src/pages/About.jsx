@@ -13,7 +13,7 @@ export default function About() {
           
           <div style={{ display: 'grid', gap: '48px', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
             
-            <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={100}>
+            <Reveal as="article" className="premium-card" delay={100}>
               <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Our Mission" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
               <div style={{ padding: '32px' }}>
                 <h3 style={{ color: 'var(--gold)', marginBottom: '16px', fontSize: '1.5rem' }}>Our Mission</h3>
@@ -21,7 +21,7 @@ export default function About() {
               </div>
             </Reveal>
 
-            <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={200}>
+            <Reveal as="article" className="premium-card" delay={200}>
               <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80" alt="Core Values" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
               <div style={{ padding: '32px' }}>
                 <h3 style={{ color: 'var(--gold)', marginBottom: '16px', fontSize: '1.5rem' }}>Core Values</h3>
@@ -29,7 +29,7 @@ export default function About() {
               </div>
             </Reveal>
 
-            <Reveal as="article" className="hover-lift" style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', background: 'var(--card-bg)', border: '1px solid var(--line)', boxShadow: 'var(--shadow)' }} delay={300}>
+            <Reveal as="article" className="premium-card" delay={300}>
               <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Global Reach" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
               <div style={{ padding: '32px' }}>
                 <h3 style={{ color: 'var(--gold)', marginBottom: '16px', fontSize: '1.5rem' }}>Global Reach</h3>
