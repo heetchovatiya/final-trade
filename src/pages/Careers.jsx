@@ -20,7 +20,7 @@ export default function Careers() {
               <Reveal as="h2" style={{ marginBottom: '32px' }}>Open Positions</Reveal>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
                 {['Senior React Developer', 'Quantitative Analyst', 'Customer Support Specialist'].map((job, idx) => (
-                  <Reveal key={job} as="div" className="hover-lift" style={{ padding: '24px', background: 'var(--card-bg)', borderRadius: '12px', border: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: 'var(--shadow)' }} delay={idx * 100}>
+                  <Reveal key={job} as="div" className="hover-lift" style={{ padding: '32px 40px', background: 'var(--card-bg)', borderRadius: '12px', border: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: 'var(--shadow)' }} delay={idx * 100}>
                     <div>
                       <h4 style={{ color: 'var(--gold)', marginBottom: '4px' }}>{job}</h4>
                       <span style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Remote / Full-time</span>
@@ -36,7 +36,7 @@ export default function Careers() {
             </div>
 
             {/* Application Form */}
-            <Reveal as="div" className="hover-glow" delay={200} style={{ padding: '40px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }}>
+            <Reveal as="div" className="hover-glow" delay={200} style={{ padding: '56px', background: 'var(--card-bg)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(197, 160, 89, 0.2)', boxShadow: 'var(--shadow)' }}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '24px' }}>Submit Your Application</h3>
               <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={e => e.preventDefault()}>
                 <div>
