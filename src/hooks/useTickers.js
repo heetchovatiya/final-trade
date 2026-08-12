@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 const INITIAL = [
   { pair: 'EUR/USD', price: 1.1552, change: 0.23, name: 'Euro / US Dollar', symbol: '€', color: '#2563eb', bgColor: 'rgba(37, 99, 235, 0.1)' },
   { pair: 'GBP/USD', price: 1.3476, change: -0.59, name: 'Pound / US Dollar', symbol: '£', color: '#7c3aed', bgColor: 'rgba(124, 58, 237, 0.1)' },
-  { pair: 'XAU/USD', price: 4338.78, change: 0.64, name: 'Gold Spot / USD', symbol: 'Au', color: '#d97706', bgColor: 'rgba(217, 119, 6, 0.1)' },
-  { pair: 'BTC/USD', price: 65010.00, change: 0.22, name: 'Bitcoin / USD', symbol: '₿', color: '#ea580c', bgColor: 'rgba(234, 88, 12, 0.1)' },
+  { pair: 'XAU/USD', price: 2748.50, change: 1.09, name: 'Gold Spot / USD', symbol: 'Au', color: '#d97706', bgColor: 'rgba(217, 119, 6, 0.1)' },
+  { pair: 'BTC/USD', price: 63420.41, change: 0.24, name: 'Bitcoin / USD', symbol: '₿', color: '#ea580c', bgColor: 'rgba(234, 88, 12, 0.1)' },
 ]
 
 export function useTickers() {
@@ -13,67 +13,65 @@ export function useTickers() {
   useEffect(() => {
     async function fetchLiveRates() {
       try {
-        // 1. Fetch Forex rates from ExchangeRate API (CORS-friendly, no key required)
-        const forexRes = await fetch('https://open.er-api.com/v6/latest/USD')
-        const forexData = await forexRes.json()
-        
-        // 2. Fetch Binance tickers (CORS-friendly, no key required)
-        const [btcRes, xauRes, eurRes, gbpRes] = await Promise.all([
-          fetch('https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'),
-          fetch('https://api.binance.com/api/v3/ticker/24hr?symbol=PAXGUSDT'),
-          fetch('https://api.binance.com/api/v3/ticker/24hr?symbol=EURUSDT'),
-          fetch('https://api.binance.com/api/v3/ticker/24hr?symbol=GBPUSDT'),
-        ])
-        
-        const btcData = await btcRes.json()
-        const xauData = await xauRes.json()
-        const eurData = await eurRes.json()
-        const gbpData = await gbpRes.json()
+        const yahooSymbols = 'EURUSD=X,GBPUSD=X,GC=F,BTC-USD'
+        const apiUrl = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${yahooSymbols}`
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`
 
-        const eurRate = 1 / forexData.rates.EUR
-        const gbpRate = 1 / forexData.rates.GBP
+        const response = await fetch(proxyUrl)
+        if (!response.ok) throw new Error('Network error fetching rates')
+        
+        const wrapper = await response.json()
+        const data = JSON.parse(wrapper.contents)
+        const results = data.quoteResponse.result
 
-        setTickers([
-          {
-            pair: 'EUR/USD',
-            price: eurRate,
-            change: parseFloat(eurData.priceChangePercent) || 0.23,
-            name: 'Euro / US Dollar',
-            symbol: '€',
-            color: '#2563eb',
-            bgColor: 'rgba(37, 99, 235, 0.12)'
-          },
-          {
-            pair: 'GBP/USD',
-            price: gbpRate,
-            change: parseFloat(gbpData.priceChangePercent) || -0.59,
-            name: 'Pound / US Dollar',
-            symbol: '£',
-            color: '#7c3aed',
-            bgColor: 'rgba(124, 58, 237, 0.12)'
-          },
-          {
-            pair: 'XAU/USD',
-            price: parseFloat(xauData.lastPrice) || 4338.78,
-            change: parseFloat(xauData.priceChangePercent) || 0.64,
-            name: 'Gold Spot / USD',
-            symbol: 'Au',
-            color: '#d97706',
-            bgColor: 'rgba(217, 119, 6, 0.12)'
-          },
-          {
-            pair: 'BTC/USD',
-            price: parseFloat(btcData.lastPrice) || 65010.00,
-            change: parseFloat(btcData.priceChangePercent) || 0.22,
-            name: 'Bitcoin / USD',
-            symbol: '₿',
-            color: '#ea580c',
-            bgColor: 'rgba(234, 88, 12, 0.12)'
-          }
-        ])
+        if (results && results.length > 0) {
+          const eur = results.find(r => r.symbol === 'EURUSD=X')
+          const gbp = results.find(r => r.symbol === 'GBPUSD=X')
+          const xau = results.find(r => r.symbol === 'GC=F')
+          const btc = results.find(r => r.symbol === 'BTC-USD')
+
+          setTickers([
+            {
+              pair: 'EUR/USD',
+              price: eur ? eur.regularMarketPrice : 1.1552,
+              change: eur ? eur.regularMarketChangePercent : 0.23,
+              name: 'Euro / US Dollar',
+              symbol: '€',
+              color: '#2563eb',
+              bgColor: 'rgba(37, 99, 235, 0.12)'
+            },
+            {
+              pair: 'GBP/USD',
+              price: gbp ? gbp.regularMarketPrice : 1.3476,
+              change: gbp ? gbp.regularMarketChangePercent : -0.59,
+              name: 'Pound / US Dollar',
+              symbol: '£',
+              color: '#7c3aed',
+              bgColor: 'rgba(124, 58, 237, 0.12)'
+            },
+            {
+              pair: 'XAU/USD',
+              price: xau ? xau.regularMarketPrice : 2748.50,
+              change: xau ? xau.regularMarketChangePercent : 1.09,
+              name: 'Gold Spot / USD',
+              symbol: 'Au',
+              color: '#d97706',
+              bgColor: 'rgba(217, 119, 6, 0.12)'
+            },
+            {
+              pair: 'BTC/USD',
+              price: btc ? btc.regularMarketPrice : 63420.41,
+              change: btc ? btc.regularMarketChangePercent : 0.24,
+              name: 'Bitcoin / USD',
+              symbol: '₿',
+              color: '#ea580c',
+              bgColor: 'rgba(234, 88, 12, 0.12)'
+            }
+          ])
+        }
       } catch (err) {
-        console.error('Error fetching live rates:', err)
-        // Fallback: update local price with tiny simulation ticks to keep it dynamic if APIs fail
+        console.error('Error fetching live rates from Yahoo Finance:', err)
+        // Fallback: update local price with tiny simulation ticks to keep it dynamic if API fails
         setTickers((prev) =>
           prev.map((t) => {
             const delta = t.price * (Math.random() * 0.0002 - 0.0001)
@@ -87,7 +85,7 @@ export function useTickers() {
     }
 
     fetchLiveRates()
-    const id = setInterval(fetchLiveRates, 8000) // update every 8 seconds
+    const id = setInterval(fetchLiveRates, 10000) // update every 10 seconds
     return () => clearInterval(id)
   }, [])
 
