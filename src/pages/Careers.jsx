@@ -19,8 +19,29 @@ export default function Careers() {
             <div>
               <Reveal as="h2" style={{ marginBottom: '32px' }}>Open Positions</Reveal>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                <style>
+                  {`
+                    .job-card {
+                      padding: 32px 40px;
+                      background: var(--card-bg);
+                      border-radius: 12px;
+                      border: 1px solid var(--line);
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      transition: all 0.3s ease;
+                      cursor: pointer;
+                    }
+                    .job-card:hover {
+                      background: rgba(197, 160, 89, 0.05);
+                      border-color: rgba(197, 160, 89, 0.5);
+                      transform: translateY(-6px);
+                      box-shadow: 0 12px 36px rgba(197, 160, 89, 0.28);
+                    }
+                  `}
+                </style>
                 {['Senior React Developer', 'Quantitative Analyst', 'Customer Support Specialist'].map((job, idx) => (
-                  <Reveal key={job} as="div" className="hover-glow" style={{ padding: '32px 40px', background: 'var(--card-bg)', borderRadius: '12px', border: '1px solid rgba(197, 160, 89, 0.3)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: 'var(--shadow)' }} delay={idx * 100}>
+                  <Reveal key={job} as="div" className="job-card" delay={idx * 100} style={{}} onClick={() => setRole(job)}>
                     <div>
                       <h4 style={{ color: 'var(--gold)', marginBottom: '4px' }}>{job}</h4>
                       <span style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Remote / Full-time</span>
