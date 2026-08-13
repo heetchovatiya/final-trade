@@ -111,6 +111,9 @@ export default function Hero({ onOpenSignup }) {
             <button type="button" className="btn btn-gold" onClick={onOpenSignup}>
               Open Live Account
             </button>
+            <button type="button" className="btn btn-outline" onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}>
+              See Platforms
+            </button>
           </Reveal>
 
           <Reveal className="hero-platforms" delay={560} style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
