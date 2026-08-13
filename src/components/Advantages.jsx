@@ -43,9 +43,9 @@ export default function Advantages() {
               {/* Left Phone (Background) */}
               <div style={{ 
                 position: 'absolute',
-                left: 'calc(50% - 115px)',
+                left: 'calc(50% - 150px)',
                 zIndex: 1,
-                transform: 'rotate(-8deg) scale(0.85)',
+                transform: 'scale(0.85)',
                 opacity: 0.7,
                 overflow: 'hidden', 
                 padding: '0', 
@@ -72,9 +72,9 @@ export default function Advantages() {
               {/* Right Phone (Background) */}
               <div style={{ 
                 position: 'absolute',
-                left: 'calc(50% - 5px)',
+                left: 'calc(50% + 30px)',
                 zIndex: 1,
-                transform: 'rotate(8deg) scale(0.85)',
+                transform: 'scale(0.85)',
                 opacity: 0.7,
                 overflow: 'hidden', 
                 padding: '0', 
@@ -119,7 +119,7 @@ export default function Advantages() {
               }}>
                 <div style={{ width: '100%', height: '100%', padding: '0', overflow: 'hidden', borderRadius: '23px' }}>
                   <img 
-                    src={isDark ? screenMt5Dark : screenMt5Light} 
+                    src={screenMt5Light} 
                     alt="MetaTrader 5 Chart Screen" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                   />
