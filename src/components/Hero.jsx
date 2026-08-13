@@ -95,9 +95,16 @@ export default function Hero({ onOpenSignup }) {
 
       <div className="container hero-layout">
         <div className="hero-copy">
+          {/* REGULATION_ADJUSTMENTS_START: Hiding 'Regulated pathways' */}
+          {/*
           <Reveal as="div" className="hero-badge" delay={0}>
             Multi-asset access · Regulated pathways · Global coverage
           </Reveal>
+          */}
+          <Reveal as="div" className="hero-badge" delay={0}>
+            Multi-asset access · Secure pathways · Global coverage
+          </Reveal>
+          {/* REGULATION_ADJUSTMENTS_END */}
 
           <Reveal as="h1" className="hero-title" delay={160}>
             Trade with

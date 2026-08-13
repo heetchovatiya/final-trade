@@ -25,7 +25,12 @@ export default function About() {
               <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80" alt="Core Values" style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
               <div className="card-body">
                 <h3 className="card-title">Core Values</h3>
+                {/* REGULATION_ADJUSTMENTS_START: Hiding regulatory compliance reference */}
+                {/*
                 <p className="card-text">Integrity, innovation, and client success. We prioritize the security of your funds and the reliability of our platforms above all else, maintaining strict regulatory compliance and segregated client accounts.</p>
+                */}
+                <p className="card-text">Integrity, innovation, and client success. We prioritize the security of your funds and the reliability of our platforms above all else, maintaining strict corporate standards and segregated client accounts.</p>
+                {/* REGULATION_ADJUSTMENTS_END */}
               </div>
             </Reveal>
 
