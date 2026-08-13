@@ -2734,9 +2734,12 @@ button {
 
   .nav {
     position: fixed;
-    inset: var(--header-h) 0 auto;
-    background: var(--header-bg);
-    backdrop-filter: blur(14px);
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: auto;
+    background: var(--header-bg) !important;
+    backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 20px 24px 28px;
     gap: 16px;
@@ -2744,10 +2747,10 @@ button {
     transform: translateY(-120%);
     opacity: 0;
     pointer-events: none;
+    z-index: 1000 !important;
     transition:
-      transform 0.7s var(--ease-slow),
-      opacity 0.7s var(--ease-slow),
-      background var(--dur-theme) var(--ease-slow);
+      transform 0.5s var(--ease-slow),
+      opacity 0.5s var(--ease-slow);
   }
 
   .nav.open {
@@ -2769,31 +2772,26 @@ button {
   }
 
   .nav-dropdown-menu {
+    display: none;
     position: static;
-    transform: none;
+    transform: none !important;
     width: 100%;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0 0 0 16px;
-    margin: 0;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 8px 0 8px 16px !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 
   .nav-dropdown.open .nav-dropdown-menu {
-    max-height: 500px;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    display: block;
   }
 
   .nav-dropdown-item {
-    padding: 8px 0;
+    padding: 10px 0;
     font-size: 0.95rem;
     color: var(--muted);
   }
