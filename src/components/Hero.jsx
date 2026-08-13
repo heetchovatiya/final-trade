@@ -2,7 +2,9 @@ import { useCallback, useRef, useState } from 'react'
 import { Reveal } from '../hooks/useReveal'
 import HeroVisual from './HeroVisual'
 import { useTickers, formatPrice } from '../hooks/useTickers'
-import mt5LogoSmall from '../assets/metatrader-5/Logo/metatrader5-white.png'
+import { useTheme } from '../hooks/useTheme'
+import mt5LogoWhite from '../assets/metatrader-5/Logo/metatrader5-white.png'
+import mt5LogoDark from '../assets/metatrader-5/Logo/metatrader5.png'
 
 const TRUST = [
   'Segregated client funds',
@@ -64,6 +66,7 @@ export default function Hero({ onOpenSignup }) {
   const heroRef = useRef(null)
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
   const tickers = useTickers()
+  const { isDark } = useTheme()
 
   const onMove = useCallback((e) => {
     const el = heroRef.current
@@ -117,7 +120,7 @@ export default function Hero({ onOpenSignup }) {
           </Reveal>
 
           <Reveal className="hero-platforms" delay={560} style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <img src={mt5LogoSmall} alt="MetaTrader 5" style={{ height: '22px', objectFit: 'contain', opacity: 0.85 }} />
+            <img src={isDark ? mt5LogoWhite : mt5LogoDark} alt="MetaTrader 5" style={{ height: '22px', objectFit: 'contain', opacity: 0.85 }} />
           </Reveal>
 
           <Reveal as="ul" className="hero-trust" delay={640}>
