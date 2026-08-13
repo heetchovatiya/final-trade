@@ -4,10 +4,15 @@ const ThemeContext = createContext(null)
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
+    /* REGULATION_ADJUSTMENTS_START: Enforcing dark mode only */
+    /*
     if (typeof window !== 'undefined') {
       return localStorage.getItem('uh-theme') || 'dark'
     }
     return 'dark'
+    */
+    return 'dark'
+    /* REGULATION_ADJUSTMENTS_END */
   })
 
   useEffect(() => {

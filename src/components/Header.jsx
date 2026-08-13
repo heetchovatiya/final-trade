@@ -129,6 +129,8 @@ export default function Header({ onOpenSignup }) {
         </nav>
 
         <div className="header-actions">
+          {/* REGULATION_ADJUSTMENTS_START: Hiding theme toggle button */}
+          {/*
           <button
             type="button"
             className="theme-toggle"
@@ -142,6 +144,8 @@ export default function Header({ onOpenSignup }) {
               </span>
             </span>
           </button>
+          */}
+          {/* REGULATION_ADJUSTMENTS_END */}
           <button type="button" className="btn-text" onClick={onOpenSignup}>
             Log In
           </button>
