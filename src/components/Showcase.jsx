@@ -12,7 +12,7 @@ export default function Showcase() {
 
         <Reveal className="stats-row" delay={200}>
           <div className="stat hover-lift">
-            <div className="stat-value count-up">110</div>
+            <div className="stat-value count-up">1,400+</div>
             <div className="stat-label">Trading instruments</div>
           </div>
           <div className="stat hover-lift">
