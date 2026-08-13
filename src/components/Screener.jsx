@@ -357,7 +357,9 @@ export default function Screener({ onOpenSignup }) {
           Analyze live order book depth, execution spreads, and real-time interactive technical charts.
         </Reveal>
 
-        <div className="screener-layout">
+        {/* REGULATION_ADJUSTMENTS_START: Adjust screener layout columns to 1fr when chart is hidden */}
+        <div className="screener-layout" style={{ gridTemplateColumns: '1fr' }}>
+        {/* REGULATION_ADJUSTMENTS_END */}
           {/* Left Table Panel */}
           <Reveal className="screener-table-card" delay={200}>
             <div className="screener-header-controls">
@@ -469,9 +471,9 @@ export default function Screener({ onOpenSignup }) {
             </div>
           </Reveal>
 
-          {/* Right Technical Chart Panel */}
+          {/* REGULATION_ADJUSTMENTS_START: Hiding technical chart panel because chart data is simulated/fake */}
+          {/*
           <Reveal className="screener-chart-card" delay={350}>
-            {/* Header info */}
             <div className="chart-header-block">
               <div className="chart-header-symbol">
                 <span
@@ -499,7 +501,6 @@ export default function Screener({ onOpenSignup }) {
               </div>
             </div>
 
-            {/* Interval Filters Controls */}
             <div className="chart-controls">
               <div className="chart-intervals">
                 {['1M', '5M', '1H', '1D', '1W'].map((interval) => (
@@ -522,7 +523,6 @@ export default function Screener({ onOpenSignup }) {
               </button>
             </div>
 
-            {/* Sparkline Canvas Area */}
             <div className="chart-canvas-wrapper" aria-label="Interactive chart visualization" style={{ width: '100%', maxWidth: '100%', overflow: 'hidden' }}>
               <svg viewBox="0 0 340 180" className="chart-svg" preserveAspectRatio="none" style={{ width: '100%', minHeight: '180px' }}>
                 <defs>
@@ -532,18 +532,15 @@ export default function Screener({ onOpenSignup }) {
                   </linearGradient>
                 </defs>
 
-                {/* Grid Lines background */}
                 <line x1="15" y1="15" x2="325" y2="15" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
                 <line x1="15" y1="60" x2="325" y2="60" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
                 <line x1="15" y1="105" x2="325" y2="105" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
                 <line x1="15" y1="150" x2="325" y2="150" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
 
-                {/* Shaded gradient path */}
                 {chartPaths.area && (
                   <path d={chartPaths.area} fill="url(#chartGrad)" />
                 )}
 
-                {/* Secondary dashed indicator line (MA) */}
                 {showMA && chartPaths.ma && (
                   <path
                     d={chartPaths.ma}
@@ -554,7 +551,6 @@ export default function Screener({ onOpenSignup }) {
                   />
                 )}
 
-                {/* Main curve line */}
                 {chartPaths.line && (
                   <path
                     d={chartPaths.line}
@@ -565,7 +561,6 @@ export default function Screener({ onOpenSignup }) {
                   />
                 )}
 
-                {/* Pulsing indicator node on the last point */}
                 <circle
                   cx={nodeCoords.cx}
                   cy={nodeCoords.cy}
@@ -576,7 +571,6 @@ export default function Screener({ onOpenSignup }) {
               </svg>
             </div>
 
-            {/* Buyer vs Seller Sentiment */}
             <div className="chart-sentiment-container">
               <div className="sentiment-labels">
                 <span className="sentiment-buyers">Buyers ({sentiment.buyers}%)</span>
@@ -594,6 +588,8 @@ export default function Screener({ onOpenSignup }) {
               </div>
             </div>
           </Reveal>
+          */}
+          {/* REGULATION_ADJUSTMENTS_END */}
         </div>
       </div>
     </section>
