@@ -309,7 +309,8 @@ export default function HeroVisual({ mouse = { x: 0, y: 0 }, tickers = [] }) {
         ctx.lineWidth = 1
         ctx.stroke()
 
-        // Floating HUD Price Box
+        /* REGULATION_ADJUSTMENTS_START: Hiding the cursor-following mock order/price HUD box */
+        /*
         const calculatedPrice = (4800 + (1 - my / height) * 250).toFixed(2)
         const hudText = `ORDER #8492 · $${calculatedPrice}  ▲ +2.45%`
           ctx.font = '600 11px system-ui, -apple-system, sans-serif'
@@ -328,6 +329,8 @@ export default function HeroVisual({ mouse = { x: 0, y: 0 }, tickers = [] }) {
 
         ctx.fillStyle = dark ? '#ffffff' : '#0d0d0d'
         ctx.fillText(hudText, boxX + 9, boxY + 16)
+        */
+        /* REGULATION_ADJUSTMENTS_END */
       }
 
       rafRef.current = requestAnimationFrame(render)
