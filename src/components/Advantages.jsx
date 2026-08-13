@@ -1,6 +1,11 @@
 import { Reveal } from '../hooks/useReveal'
+import { useTheme } from '../hooks/useTheme'
+import smartphoneMt5Dark from '../assets/metatrader-5/smartphone_mt5_dark.png'
+import smartphoneMt5Light from '../assets/metatrader-5/smartphone_mt5_light.png'
 
 export default function Advantages() {
+  const { isDark } = useTheme()
+
   return (
     <section className="advantages section" id="advantages">
       <div className="container">
@@ -24,7 +29,7 @@ export default function Advantages() {
             </div>
             <div className="phone-float" aria-hidden="true" style={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '24px' }}>
               <img 
-                src="https://www.metaquotes.net/c/2/0/metatrader_5_mobile_for_media_kit.jpg" 
+                src={isDark ? smartphoneMt5Dark : smartphoneMt5Light} 
                 alt="MetaTrader 5 Mobile" 
                 style={{ 
                   width: '180px', 
@@ -32,8 +37,7 @@ export default function Advantages() {
                   objectFit: 'contain', 
                   borderRadius: '24px', 
                   boxShadow: '0 25px 50px rgba(0, 0, 0, 0.6)',
-                  animation: 'floatY 5.5s ease-in-out infinite',
-                  border: '4px solid #1c1c1e'
+                  animation: 'floatY 5.5s ease-in-out infinite'
                 }} 
               />
             </div>
