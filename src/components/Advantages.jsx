@@ -73,9 +73,7 @@ export default function Advantages() {
             </div>
             <h3>24/7 withdrawals</h3>
             <p>Request funds any time — processed with institutional speed.</p>
-            <a href="#signup" className="btn btn-gold btn-sm">
-              Withdraw
-            </a>
+
           </Reveal>
 
           <Reveal as="article" className="bento-card bento-stable hover-lift" delay={200}>
@@ -86,17 +84,7 @@ export default function Advantages() {
             <p>Deep liquidity from tier-1 providers for consistent fills.</p>
           </Reveal>
 
-          <Reveal as="article" className="bento-card bento-copytrade hover-lift" delay={350}>
-            <img
-              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=700&q=80"
-              alt="Abstract financial network"
-              loading="lazy"
-            />
-            <div className="bento-overlay">
-              <h3>Explore Markets Limited Copy Trading</h3>
-              <p>Follow proven strategies and mirror positions automatically.</p>
-            </div>
-          </Reveal>
+
         </div>
       </div>
     </section>

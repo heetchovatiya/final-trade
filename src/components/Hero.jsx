@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react'
 import { Reveal } from '../hooks/useReveal'
 import HeroVisual from './HeroVisual'
 import { useTickers, formatPrice } from '../hooks/useTickers'
+import mt5LogoSmall from '../assets/metatrader-5/Logo/metatrader5-white.png'
 
 const TRUST = [
   'Segregated client funds',
@@ -87,7 +88,7 @@ export default function Hero({ onOpenSignup }) {
       onMouseLeave={onLeave}
     >
       {/* Full-bleed Interactive Stock Market Background */}
-      <HeroVisual mouse={mouse} />
+      <HeroVisual mouse={mouse} tickers={tickers} />
 
       <div className="container hero-layout">
         <div className="hero-copy">
@@ -110,9 +111,14 @@ export default function Hero({ onOpenSignup }) {
             <button type="button" className="btn btn-gold" onClick={onOpenSignup}>
               Open Live Account
             </button>
-            <a href="#platforms" className="btn btn-outline">
+            <button type="button" className="btn btn-outline" onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}>
               See Platforms
-            </a>
+            </button>
+          </Reveal>
+
+          <Reveal className="hero-platforms" delay={560} style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span style={{ fontSize: '0.8rem', color: 'var(--muted)', letterSpacing: '0.05em', fontWeight: 600 }}>OFFICIAL PLATFORM:</span>
+            <img src={mt5LogoSmall} alt="MetaTrader 5" style={{ height: '22px', objectFit: 'contain', opacity: 0.85 }} />
           </Reveal>
 
           <Reveal as="ul" className="hero-trust" delay={640}>
@@ -135,7 +141,7 @@ export default function Hero({ onOpenSignup }) {
           </div>
 
           <div id="markets" className="ticker-grid" aria-label="Easy access global assets">
-            {tickers.map((t) => {
+            {tickers.filter(t => t.inGrid).map((t) => {
               const up = t.change >= 0
               return (
                 <article key={t.pair} className="ticker-card hover-lift">

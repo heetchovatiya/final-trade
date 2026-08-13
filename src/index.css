@@ -468,6 +468,104 @@ button {
   transform: scaleX(1);
 }
 
+/* --- Navigation Dropdowns & Links --- */
+.nav-link {
+  font-family: var(--font);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink);
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--dur-hover) var(--ease-slow);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s var(--ease-slow);
+}
+
+.nav-link:hover {
+  color: var(--gold);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Dropdown Container */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-chevron {
+  transition: transform 0.3s ease;
+  color: var(--muted);
+}
+
+.nav-dropdown:hover .nav-chevron,
+.nav-dropdown.open .nav-chevron {
+  transform: rotate(180deg);
+  color: var(--gold);
+}
+
+/* Dropdown Menu Box */
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  width: 210px;
+  background: var(--header-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s var(--ease-slow);
+  z-index: 100;
+}
+
+/* Show on Hover/Open */
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(4px);
+}
+
+/* Dropdown items */
+.nav-dropdown-item {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: all 0.25s ease;
+}
+
+.nav-dropdown-item:hover {
+  color: var(--gold);
+  background: rgba(197, 160, 89, 0.08);
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -2636,9 +2734,12 @@ button {
 
   .nav {
     position: fixed;
-    inset: var(--header-h) 0 auto;
-    background: var(--header-bg);
-    backdrop-filter: blur(14px);
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: auto;
+    background: var(--header-bg) !important;
+    backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 20px 24px 28px;
     gap: 16px;
@@ -2646,16 +2747,53 @@ button {
     transform: translateY(-120%);
     opacity: 0;
     pointer-events: none;
+    z-index: 1000 !important;
     transition:
-      transform 0.7s var(--ease-slow),
-      opacity 0.7s var(--ease-slow),
-      background var(--dur-theme) var(--ease-slow);
+      transform 0.5s var(--ease-slow),
+      opacity 0.5s var(--ease-slow);
   }
 
   .nav.open {
     transform: none;
     opacity: 1;
     pointer-events: auto;
+  }
+
+  /* Mobile navigation dropdown accordion */
+  .nav-link {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 1.05rem;
+    justify-content: space-between;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-dropdown-menu {
+    display: none;
+    position: static;
+    transform: none !important;
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 8px 0 8px 16px !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown-item {
+    padding: 10px 0;
+    font-size: 0.95rem;
+    color: var(--muted);
   }
 
   .nav-toggle {
@@ -3830,3 +3968,376 @@ a,
     filter: none;
   }
 }
+
+.premium-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.premium-card:hover {
+  background: rgba(197, 160, 89, 0.05) !important;
+  border-color: rgba(197, 160, 89, 0.5) !important;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(197, 160, 89, 0.28);
+}
+
+/* ================================================================
+   SUB-PAGE SHARED STYLES (Desktop-first, then mobile overrides)
+   ================================================================ */
+
+/* --- Card body & text --- */
+.card-body {
+  padding: 32px;
+}
+
+.card-title {
+  color: var(--ink);
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+.card-text {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.card-date {
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --- Page grids --- */
+.page-grid {
+  display: grid;
+  gap: 48px;
+}
+
+.page-grid--cards {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.page-grid--features {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.page-grid--two-col {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 64px;
+  align-items: start;
+}
+
+/* --- Full-width banner images --- */
+.page-banner {
+  width: 100%;
+  height: 350px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 64px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.page-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+  z-index: 1;
+}
+
+.page-banner__text {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+}
+
+.page-banner__text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+/* --- Form inputs --- */
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: var(--page-bg);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.3s;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  border-color: var(--gold);
+}
+
+/* --- Form card wrapper --- */
+.page-form-card {
+  padding: 40px;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  box-shadow: var(--shadow);
+}
+
+/* --- Contact info cards --- */
+.contact-info-card {
+  padding: 24px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+/* --- Spreads & Fees table --- */
+.spreads-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spreads-badge {
+  padding: 6px 12px;
+  background: rgba(26, 155, 92, 0.1);
+  color: #1a9b5c;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.spreads-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  color: var(--ink);
+}
+
+.spreads-table th {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.spreads-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.spreads-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spreads-table tbody tr {
+  transition: background 0.3s;
+}
+
+.spreads-table tbody tr:hover {
+  background: var(--section-alt);
+}
+
+/* ================================================================
+   MOBILE RESPONSIVE – SUB PAGES
+   ================================================================ */
+
+/* --- Tablets & smaller (≤ 768px) --- */
+@media (max-width: 768px) {
+  /* PageHero spacing */
+  .page-hero {
+    padding: 90px 0 56px !important;
+  }
+
+  .page-hero .hero-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .page-hero .hero-sub {
+    font-size: 0.95rem;
+  }
+
+  /* Page grids single column */
+  .page-grid--cards,
+  .page-grid--features,
+  .page-grid--two-col {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Banner image shorter */
+  .page-banner {
+    height: 220px;
+    margin-bottom: 36px;
+    border-radius: 16px;
+  }
+
+  .page-banner__text {
+    left: 20px;
+    right: 20px;
+  }
+
+  .page-banner__text h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Card body tighter */
+  .card-body {
+    padding: 24px 20px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  /* Form card tighter */
+  .page-form-card {
+    padding: 28px 20px;
+  }
+
+  /* Spreads table */
+  .spreads-table th,
+  .spreads-table td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Section padding */
+  .section,
+  .section-dark {
+    padding: 64px 0;
+  }
+
+  /* Showcase MT5 grid */
+  .showcase .container > div[style] {
+    gap: 32px !important;
+  }
+}
+
+/* --- Small phones (≤ 480px) --- */
+@media (max-width: 480px) {
+  /* PageHero even tighter */
+  .page-hero {
+    padding: 80px 0 40px !important;
+  }
+
+  .page-hero .hero-title {
+    font-size: clamp(1.4rem, 8vw, 1.8rem);
+  }
+
+  .page-hero .hero-sub {
+    font-size: 0.88rem;
+    padding: 0 4px;
+  }
+
+  /* Banner */
+  .page-banner {
+    height: 180px;
+    margin-bottom: 28px;
+    border-radius: 12px;
+  }
+
+  .page-banner__text h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Cards */
+  .card-body {
+    padding: 20px 16px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* Form card */
+  .page-form-card {
+    padding: 24px 16px;
+  }
+
+  .form-input {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  /* Job cards */
+  .job-card {
+    padding: 20px 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .job-card .btn {
+    align-self: flex-start;
+  }
+
+  /* Contact info cards */
+  .contact-info-card {
+    padding: 20px 16px;
+  }
+
+  /* Spreads */
+  .spreads-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .spreads-header h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .spreads-table th,
+  .spreads-table td {
+    padding: 10px 8px;
+    font-size: 0.78rem;
+  }
+
+  /* Premium card images on small screens */
+  .premium-card img {
+    height: 180px !important;
+  }
+
+  /* Section padding minimal */
+  .section,
+  .section-dark {
+    padding: 48px 0;
+  }
+
+  /* Container breathing room */
+  .container {
+    width: calc(100% - 32px);
+  }
+}

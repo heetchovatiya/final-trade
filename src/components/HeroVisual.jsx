@@ -1,16 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useTheme } from '../hooks/useTheme'
 
-const STOCK_TICKERS = [
-  { id: 'gold', symbol: 'XAU/USD', name: 'Gold Spot', price: '$2,748.50', change: '+1.85%', up: true, x: 14, y: 16, depth: 0.6 },
-  { id: 'btc', symbol: 'BTC/USD', name: 'Bitcoin', price: '$94,280.00', change: '+5.24%', up: true, x: 86, y: 14, depth: 0.85 },
-  { id: 'eur', symbol: 'EUR/USD', name: 'Euro / Dollar', price: '1.0855', change: '+0.38%', up: true, x: 10, y: 52, depth: 0.45 },
-  { id: 'nvda', symbol: 'NVDA', name: 'NVIDIA Corp', price: '$128.40', change: '+4.12%', up: true, x: 88, y: 54, depth: 0.75 },
-  { id: 'sp500', symbol: 'S&P 500', name: 'US Index', price: '5,890.20', change: '+0.82%', up: true, x: 18, y: 82, depth: 0.5 },
-  { id: 'oil', symbol: 'WTI OIL', name: 'Crude Oil', price: '$76.40', change: '-0.65%', up: false, x: 82, y: 84, depth: 0.4 },
-]
-
-export default function HeroVisual({ mouse = { x: 0, y: 0 } }) {
+export default function HeroVisual({ mouse = { x: 0, y: 0 }, tickers = [] }) {
   const { isDark } = useTheme()
   const isDarkRef = useRef(isDark)
   isDarkRef.current = isDark
@@ -370,29 +361,59 @@ export default function HeroVisual({ mouse = { x: 0, y: 0 } }) {
 
       {/* Floating Stock Chips Layer */}
       <div className="hero-stock-chips">
-        {STOCK_TICKERS.map((chip) => {
-          const ox = px * 32 * chip.depth
-          const oy = py * 22 * chip.depth
-          return (
-            <div
-              key={chip.id}
-              className={`stock-chip stock-chip--${chip.up ? 'up' : 'down'}`}
-              style={{
-                left: `${chip.x}%`,
-                top: `${chip.y}%`,
-                transform: `translate3d(calc(-50% + ${ox}px), calc(-50% + ${oy}px), 0)`,
-              }}
-            >
-              <div className="stock-chip__header">
-                <span className="stock-chip__symbol">{chip.symbol}</span>
-                <span className={`stock-chip__change ${chip.up ? 'up' : 'down'}`}>
-                  {chip.change}
-                </span>
+        {(() => {
+          const liveChips = [
+            { id: 'gold', symbol: 'XAU/USD', name: 'Gold Spot', price: '$2,748.50', change: '+1.85%', up: true, x: 14, y: 16, depth: 0.6 },
+            { id: 'aapl', symbol: 'AAPL', name: 'Apple Inc.', price: '$180.50', change: '+1.20%', up: true, x: 86, y: 14, depth: 0.85 },
+            { id: 'eur', symbol: 'EUR/USD', name: 'Euro / Dollar', price: '1.0855', change: '+0.38%', up: true, x: 10, y: 52, depth: 0.45 },
+            { id: 'nvda', symbol: 'NVDA', name: 'NVIDIA Corp', price: '$128.40', change: '+4.12%', up: true, x: 88, y: 54, depth: 0.75 },
+            { id: 'sp500', symbol: 'S&P 500', name: 'US Index', price: '5,890.20', change: '+0.82%', up: true, x: 18, y: 82, depth: 0.5 },
+            { id: 'oil', symbol: 'WTI OIL', name: 'Crude Oil', price: '$76.40', change: '-0.65%', up: false, x: 82, y: 84, depth: 0.4 },
+          ].map(chip => {
+            const live = tickers.find(t => t.pair === chip.symbol)
+            if (!live) return chip
+            
+            let formattedPrice = ''
+            if (chip.symbol === 'EUR/USD') {
+              formattedPrice = live.price.toFixed(4)
+            } else if (chip.symbol === 'S&P 500') {
+              formattedPrice = live.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+            } else {
+              formattedPrice = '$' + live.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+            }
+
+            return {
+              ...chip,
+              price: formattedPrice,
+              change: `${live.change >= 0 ? '+' : ''}${live.change.toFixed(2)}%`,
+              up: live.change >= 0
+            }
+          })
+
+          return liveChips.map((chip) => {
+            const ox = px * 32 * chip.depth
+            const oy = py * 22 * chip.depth
+            return (
+              <div
+                key={chip.id}
+                className={`stock-chip stock-chip--${chip.up ? 'up' : 'down'}`}
+                style={{
+                  left: `${chip.x}%`,
+                  top: `${chip.y}%`,
+                  transform: `translate3d(calc(-50% + ${ox}px), calc(-50% + ${oy}px), 0)`,
+                }}
+              >
+                <div className="stock-chip__header">
+                  <span className="stock-chip__symbol">{chip.symbol}</span>
+                  <span className={`stock-chip__change ${chip.up ? 'up' : 'down'}`}>
+                    {chip.change}
+                  </span>
+                </div>
+                <div className="stock-chip__price">{chip.price}</div>
               </div>
-              <div className="stock-chip__price">{chip.price}</div>
-            </div>
-          )
-        })}
+            )
+          })
+        })()}
       </div>
     </div>
   )

@@ -1,23 +1,24 @@
 import { useCallback, useState } from 'react'
 import { ThemeProvider } from './hooks/useTheme'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import Partners from './components/Partners'
-import MarketGrid from './components/MarketGrid'
-import Advantages from './components/Advantages'
-import Showcase from './components/Showcase'
-import Screener from './components/Screener'
-import AccountTypes from './components/AccountTypes'
-import Steps from './components/Steps'
-import ToolsInsights from './components/ToolsInsights'
-import Results from './components/Results'
-import Testimonials from './components/Testimonials'
-import Protected from './components/Protected'
-import FAQ from './components/FAQ'
-import Support from './components/Support'
-import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 import SignupModal from './components/SignupModal'
+
+// Pages
+import Home from './pages/Home'
+import About from './pages/About'
+import Careers from './pages/Careers'
+import Press from './pages/Press'
+import Contact from './pages/Contact'
+import Forex from './pages/Forex'
+import Commodities from './pages/Commodities'
+import Indices from './pages/Indices'
+import CFDs from './pages/CFDs'
+import AccountTypesPage from './pages/AccountTypesPage'
+import SpreadsFees from './pages/SpreadsFees'
+import CopyTrading from './pages/CopyTrading'
+import Education from './pages/Education'
 
 function Page() {
   const [signupOpen, setSignupOpen] = useState(false)
@@ -25,28 +26,34 @@ function Page() {
   const closeSignup = useCallback(() => setSignupOpen(false), [])
 
   return (
-    <>
+    <BrowserRouter>
       <Header onOpenSignup={openSignup} />
-      <main>
-        <Hero onOpenSignup={openSignup} />
-        {/* <Partners /> */}
-        <MarketGrid onOpenSignup={openSignup} />
-        <Advantages />
-        <Screener onOpenSignup={openSignup} />
-        {/* <Showcase /> */}
-        <AccountTypes onOpenSignup={openSignup} />
-        {/* <Steps /> */}
-        {/* <ToolsInsights /> */}
-        <Results onOpenSignup={openSignup} />
-        {/* <Testimonials /> */}
-        {/* <Protected /> */}
-        {/* <FAQ /> */}
-        {/* <Support /> */}
-        {/* <FinalCTA onOpenSignup={openSignup} /> */}
-      </main>
+      
+      <Routes>
+        <Route path="/" element={<Home onOpenSignup={openSignup} />} />
+        
+        {/* Company Pages */}
+        <Route path="/about" element={<About />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/press" element={<Press />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Markets Pages */}
+        <Route path="/markets/forex" element={<Forex />} />
+        <Route path="/markets/commodities" element={<Commodities />} />
+        <Route path="/markets/indices" element={<Indices />} />
+        <Route path="/markets/cfds" element={<CFDs />} />
+
+        {/* Trading Pages */}
+        <Route path="/trading/accounts" element={<AccountTypesPage />} />
+        <Route path="/trading/spreads" element={<SpreadsFees />} />
+        <Route path="/trading/copy-trading" element={<CopyTrading />} />
+        <Route path="/trading/education" element={<Education />} />
+      </Routes>
+
       <Footer />
       <SignupModal open={signupOpen} onClose={closeSignup} />
-    </>
+    </BrowserRouter>
   )
 }
 

@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from 'react'
 import { Reveal } from '../hooks/useReveal'
 
-const TABS = ['All', 'Forex', 'Crypto', 'Indices', 'Metals', 'Commodities']
+const TABS = ['All', 'Forex', 'CFDs', 'Indices', 'Metals', 'Commodities']
 
 const INITIAL_INSTRUMENTS = [
   {
@@ -80,7 +80,7 @@ const INITIAL_INSTRUMENTS = [
     id: 'btcusd',
     symbol: 'BTC/USD',
     name: 'Bitcoin Spot',
-    category: 'Crypto',
+    category: 'CFDs',
     price: 65010.04,
     change: 0.18,
     spread: '5 pips',
@@ -183,7 +183,7 @@ export default function Screener({ onOpenSignup }) {
               nextPrice = parseFloat(btcData.lastPrice) || 65010.04
               nextChange = parseFloat(btcData.priceChangePercent) || 0.18
             } else {
-              // Simulated live tick updates for non-crypto/non-forex items (Stocks, Commodities, Indices)
+              // Simulated live tick updates for non-CFD/non-forex items (Stocks, Commodities, Indices)
               const tick = inst.price * (Math.random() * 0.0006 - 0.0003)
               nextPrice = inst.price + tick
               const changeTick = Math.random() * 0.02 - 0.01
