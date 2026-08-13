@@ -350,7 +350,7 @@ export default function Screener({ onOpenSignup }) {
         </Reveal>
 
         <Reveal as="h2" className="screener-title">
-          Trade <span className="gold">1,500+ Multi-Asset CFDs</span>
+          Trade <span className="gold">1,400+ Multi-Asset CFDs</span>
         </Reveal>
 
         <Reveal as="p" className="screener-lead" delay={120}>
