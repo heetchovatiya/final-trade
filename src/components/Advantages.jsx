@@ -22,35 +22,20 @@ export default function Advantages() {
                 Explore platforms →
               </a>
             </div>
-            <div className="bento-visual phone-float" aria-hidden="true">
-              <div className="mini-phone">
-                <div className="mini-phone-screen">
-                  <div className="mps-bal">$18,058.41</div>
-                  <div className="mps-chart">
-                    <svg viewBox="0 0 120 60" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="goldSoftMini" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#C5A059" stopOpacity="0.35" />
-                          <stop offset="100%" stopColor="#C5A059" stopOpacity="0" />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d="M0,50 L20,45 L40,48 L60,30 L80,35 L100,15 L120,20"
-                        fill="none"
-                        stroke="#C5A059"
-                        strokeWidth="2.5"
-                        className="draw-line"
-                      />
-                      <path
-                        d="M0,50 L20,45 L40,48 L60,30 L80,35 L100,15 L120,20 L120,60 L0,60 Z"
-                        fill="url(#goldSoftMini)"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div className="coin coin-1" />
-              <div className="coin coin-2" />
+            <div className="phone-float" aria-hidden="true" style={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '24px' }}>
+              <img 
+                src="https://www.metaquotes.net/c/2/0/metatrader_5_mobile_for_media_kit.jpg" 
+                alt="MetaTrader 5 Mobile" 
+                style={{ 
+                  width: '180px', 
+                  height: 'auto', 
+                  objectFit: 'contain', 
+                  borderRadius: '24px', 
+                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.6)',
+                  animation: 'floatY 5.5s ease-in-out infinite',
+                  border: '4px solid #1c1c1e'
+                }} 
+              />
             </div>
           </Reveal>
 
