@@ -2,6 +2,10 @@ import { Reveal } from '../hooks/useReveal'
 import { useTheme } from '../hooks/useTheme'
 import screenMt5Dark from '../assets/metatrader-5/screen_mt5_dark.png'
 import screenMt5Light from '../assets/metatrader-5/screen_mt5_light.png'
+import screenMt5LeftDark from '../assets/metatrader-5/screen_mt5_left_dark.png'
+import screenMt5LeftLight from '../assets/metatrader-5/screen_mt5_left_light.png'
+import screenMt5RightDark from '../assets/metatrader-5/screen_mt5_right_dark.png'
+import screenMt5RightLight from '../assets/metatrader-5/screen_mt5_right_light.png'
 
 export default function Advantages() {
   const { isDark } = useTheme()
@@ -27,17 +31,97 @@ export default function Advantages() {
                 Explore platforms →
               </a>
             </div>
-            <div className="phone-float" aria-hidden="true" style={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '24px' }}>
-              <div className="mini-phone" style={{ overflow: 'hidden', padding: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '5px solid #1c1c1e', background: '#000', borderRadius: '32px', boxShadow: '0 25px 50px rgba(0,0,0,0.6)' }}>
-                <div className="mini-phone-screen" style={{ width: '100%', height: '100%', padding: '0', overflow: 'hidden', borderRadius: '26px' }}>
+            <div className="phone-float" aria-hidden="true" style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              alignItems: 'center', 
+              width: '100%', 
+              marginTop: '32px',
+              position: 'relative',
+              height: '280px'
+            }}>
+              {/* Left Phone (Background) */}
+              <div style={{ 
+                position: 'absolute',
+                left: 'calc(50% - 115px)',
+                zIndex: 1,
+                transform: 'rotate(-8deg) scale(0.85)',
+                opacity: 0.7,
+                overflow: 'hidden', 
+                padding: '0', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                border: '4px solid #1c1c1e', 
+                background: '#000', 
+                borderRadius: '24px', 
+                boxShadow: '0 15px 30px rgba(0,0,0,0.5)',
+                width: '120px',
+                height: '220px',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ width: '100%', height: '100%', padding: '0', overflow: 'hidden', borderRadius: '20px' }}>
+                  <img 
+                    src={isDark ? screenMt5LeftDark : screenMt5LeftLight} 
+                    alt="MetaTrader 5 Quotes Screen" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  />
+                </div>
+              </div>
+
+              {/* Right Phone (Background) */}
+              <div style={{ 
+                position: 'absolute',
+                left: 'calc(50% - 5px)',
+                zIndex: 1,
+                transform: 'rotate(8deg) scale(0.85)',
+                opacity: 0.7,
+                overflow: 'hidden', 
+                padding: '0', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                border: '4px solid #1c1c1e', 
+                background: '#000', 
+                borderRadius: '24px', 
+                boxShadow: '0 15px 30px rgba(0,0,0,0.5)',
+                width: '120px',
+                height: '220px',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ width: '100%', height: '100%', padding: '0', overflow: 'hidden', borderRadius: '20px' }}>
+                  <img 
+                    src={isDark ? screenMt5RightDark : screenMt5RightLight} 
+                    alt="MetaTrader 5 Trade Screen" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  />
+                </div>
+              </div>
+
+              {/* Center Phone (Foreground) */}
+              <div className="mini-phone" style={{ 
+                position: 'absolute',
+                left: 'calc(50% - 70px)',
+                zIndex: 2,
+                transform: 'scale(1)',
+                overflow: 'hidden', 
+                padding: '0', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                border: '5px solid #1c1c1e', 
+                background: '#000', 
+                borderRadius: '28px', 
+                boxShadow: '0 25px 50px rgba(0,0,0,0.6)',
+                width: '140px',
+                height: '250px',
+                animation: 'floatY 5.5s ease-in-out infinite'
+              }}>
+                <div style={{ width: '100%', height: '100%', padding: '0', overflow: 'hidden', borderRadius: '23px' }}>
                   <img 
                     src={isDark ? screenMt5Dark : screenMt5Light} 
-                    alt="MetaTrader 5 App interface" 
-                    style={{ 
-                      width: '100%', 
-                      height: '100%', 
-                      objectFit: 'cover'
-                    }} 
+                    alt="MetaTrader 5 Chart Screen" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                   />
                 </div>
               </div>
