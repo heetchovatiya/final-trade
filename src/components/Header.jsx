@@ -30,7 +30,9 @@ const NAV_ITEMS = [
     label: 'Company',
     children: [
       { to: '/about', label: 'About Us' },
-      { to: '/press', label: 'Press & Media' },
+      /* REGULATION_ADJUSTMENTS_START: Hiding press page link */
+      /* { to: '/press', label: 'Press & Media' }, */
+      /* REGULATION_ADJUSTMENTS_END */
       { to: '/careers', label: 'Careers' },
       { to: '/contact', label: 'Contact Us' },
     ],

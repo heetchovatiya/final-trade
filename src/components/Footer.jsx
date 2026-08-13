@@ -7,7 +7,9 @@ const COLS = [
     links: [
       { name: 'About Us', path: '/about' },
       { name: 'Careers', path: '/careers' },
-      { name: 'Press', path: '/press' },
+      /* REGULATION_ADJUSTMENTS_START: Hiding press page link */
+      /* { name: 'Press', path: '/press' }, */
+      /* REGULATION_ADJUSTMENTS_END */
       { name: 'Contact', path: '/contact' }
     ],
   },

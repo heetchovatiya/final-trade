@@ -35,7 +35,9 @@ function Page() {
         {/* Company Pages */}
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/press" element={<Press />} />
+        {/* REGULATION_ADJUSTMENTS_START: Hiding press page route */}
+        {/* <Route path="/press" element={<Press />} /> */}
+        {/* REGULATION_ADJUSTMENTS_END */}
         <Route path="/contact" element={<Contact />} />
 
         {/* Markets Pages */}
