@@ -117,7 +117,6 @@ export default function Hero({ onOpenSignup }) {
           </Reveal>
 
           <Reveal className="hero-platforms" delay={560} style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ fontSize: '0.8rem', color: 'var(--muted)', letterSpacing: '0.05em', fontWeight: 600 }}>OFFICIAL PLATFORM:</span>
             <img src={mt5LogoSmall} alt="MetaTrader 5" style={{ height: '22px', objectFit: 'contain', opacity: 0.85 }} />
           </Reveal>
 
