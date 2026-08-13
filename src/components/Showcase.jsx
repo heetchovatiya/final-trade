@@ -1,5 +1,5 @@
 import { Reveal } from '../hooks/useReveal'
-import mt5Logo from '../assets/metatrader-5/Logo/metatrader5-sign-white.png'
+import mt5Logo from '../assets/metatrader-5/Logo/metatrader5-sign.png'
 import mt5Devices from '../assets/metatrader-5/All in One/004.png'
 
 export default function Showcase() {
