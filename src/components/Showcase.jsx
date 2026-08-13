@@ -35,9 +35,6 @@ export default function Showcase() {
               Experience the power of the world's most popular multi-asset platform. Analyze markets with over 80 pre-installed technical indicators, execute orders with lightning-fast low latency, and customize your setup to match your exact strategy. Available on Desktop, Mobile, and Web.
             </p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <a href="https://www.mql5.com/en/market/mt5/indicator" target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-                Download for Windows
-              </a>
               <a href="#signup" className="btn btn-outline">
                 Launch WebTrader
               </a>

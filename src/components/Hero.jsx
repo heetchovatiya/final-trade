@@ -111,9 +111,6 @@ export default function Hero({ onOpenSignup }) {
             <button type="button" className="btn btn-gold" onClick={onOpenSignup}>
               Open Live Account
             </button>
-            <a href="https://www.mql5.com/en/market/mt5/indicator" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-              See Platforms
-            </a>
           </Reveal>
 
           <Reveal className="hero-platforms" delay={560} style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
