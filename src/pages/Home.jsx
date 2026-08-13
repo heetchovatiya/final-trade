@@ -15,7 +15,9 @@ export default function Home({ onOpenSignup }) {
       <Showcase />
       <Screener onOpenSignup={onOpenSignup} />
       <AccountTypes onOpenSignup={onOpenSignup} />
-      <Results onOpenSignup={onOpenSignup} />
+      {/* REGULATION_ADJUSTMENTS_START: Hiding the random/unproven Results numbers section */}
+      {/* <Results onOpenSignup={onOpenSignup} /> */}
+      {/* REGULATION_ADJUSTMENTS_END */}
     </main>
   )
 }
