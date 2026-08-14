@@ -1,0 +1,92 @@
+import { useCallback, useRef, useState } from 'react'
+import { Reveal } from '../hooks/useReveal'
+import HeroVisual from './HeroVisual'
+import mt5Logo from '../assets/metatrader-5/Logo/metatrader5.png'
+
+const TRUST = [
+  'Segregated client funds',
+  'Fast deposits & withdrawals',
+  'Institutional liquidity',
+]
+
+export default function Hero({ onOpenSignup }) {
+  const heroRef = useRef(null)
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
+
+  const onMove = useCallback((e) => {
+    const el = heroRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const nx = ((e.clientX - rect.left) / rect.width - 0.5) * 2
+    const ny = ((e.clientY - rect.top) / rect.height - 0.5) * 2
+    setMouse({
+      x: Math.max(-1, Math.min(1, nx)),
+      y: Math.max(-1, Math.min(1, ny)),
+    })
+  }, [])
+
+  const onLeave = useCallback(() => setMouse({ x: 0, y: 0 }), [])
+
+  return (
+    <section
+      className="hero"
+      id="home"
+      ref={heroRef}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+    >
+      {/* Full-bleed Interactive Stock Market Background */}
+      <HeroVisual mouse={mouse} />
+
+      <div className="container hero-layout">
+        <div className="hero-copy">
+          {/* REGULATION_ADJUSTMENTS_START: Hiding 'Regulated pathways' */}
+          {/*
+          <Reveal as="div" className="hero-badge" delay={0}>
+            Multi-asset access · Regulated pathways · Global coverage
+          </Reveal>
+          */}
+          <Reveal as="div" className="hero-badge" delay={0}>
+            Multi-asset access · Secure pathways · Global coverage
+          </Reveal>
+          {/* REGULATION_ADJUSTMENTS_END */}
+
+          <Reveal as="h1" className="hero-title" delay={160}>
+            Trade with
+            <br />
+            <span className="gold text-shimmer">Clear Direction.</span>
+          </Reveal>
+
+          <Reveal as="p" className="hero-sub" delay={320}>
+            Explore Markets Limited connects you to forex, stocks, and indices with sharp
+            pricing, deep liquidity, and tools designed for decisive traders.
+          </Reveal>
+
+          <Reveal className="hero-ctas" delay={480}>
+            <button type="button" className="btn btn-gold" onClick={onOpenSignup}>
+              Open Live Account
+            </button>
+            <button type="button" className="btn btn-outline" onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}>
+              See Platforms
+            </button>
+          </Reveal>
+
+          <Reveal className="hero-platforms" delay={560} style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <img src={mt5Logo} alt="MetaTrader 5" style={{ height: '22px', objectFit: 'contain', opacity: 0.85 }} />
+          </Reveal>
+
+          <Reveal as="ul" className="hero-trust" delay={640}>
+            {TRUST.map((item) => (
+              <li key={item}>
+                <span className="trust-check" aria-hidden="true">
+                  ✓
+                </span>
+                {item}
+              </li>
+            ))}
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  )
+}
