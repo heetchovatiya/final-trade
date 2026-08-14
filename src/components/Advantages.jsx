@@ -39,6 +39,7 @@ export default function Advantages() {
                   <img 
                     src={isDark ? screenMt5LeftDark : screenMt5LeftLight} 
                     alt="MetaTrader 5 Quotes Screen" 
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -49,6 +50,7 @@ export default function Advantages() {
                   <img 
                     src={isDark ? screenMt5RightDark : screenMt5RightLight} 
                     alt="MetaTrader 5 Trade Screen" 
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -59,6 +61,7 @@ export default function Advantages() {
                   <img 
                     src={screenMt5Light} 
                     alt="MetaTrader 5 Chart Screen" 
+                    loading="lazy"
                   />
                 </div>
               </div>

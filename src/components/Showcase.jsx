@@ -28,7 +28,7 @@ export default function Showcase() {
         <div className="showcase-grid" id="platforms">
           <Reveal as="div" delay={100}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-              <img src={mt5Logo} alt="MetaTrader 5 Logo" style={{ height: '48px', objectFit: 'contain' }} />
+              <img src={mt5Logo} alt="MetaTrader 5 Logo" loading="lazy" style={{ height: '48px', objectFit: 'contain' }} />
               <h3 style={{ fontSize: '2rem', margin: 0, color: 'var(--ink)' }}>MetaTrader 5</h3>
             </div>
             <p style={{ color: 'var(--muted)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '32px' }}>
@@ -45,7 +45,7 @@ export default function Showcase() {
           </Reveal>
 
           <Reveal as="div" className="hover-glow" delay={300} style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(197, 160, 89, 0.2)', padding: '20px', background: 'rgba(255, 255, 255, 0.02)' }}>
-            <img src={mt5Devices} alt="MetaTrader 5 Multi-Device Setup" style={{ width: '100%', display: 'block', height: 'auto', objectFit: 'contain' }} />
+            <img src={mt5Devices} alt="MetaTrader 5 Multi-Device Setup" loading="lazy" style={{ width: '100%', display: 'block', height: 'auto', objectFit: 'contain' }} />
           </Reveal>
         </div>
       </div>

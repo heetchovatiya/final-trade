@@ -3291,6 +3291,12 @@ button {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+
+  .stats-row,
+  .big-stats {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 /* ========== Screener Section ========== */
