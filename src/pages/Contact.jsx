@@ -11,7 +11,7 @@ export default function Contact() {
       <section className="section">
         <div className="container">
           <div className="page-grid page-grid--two-col">
-            
+
             <Reveal as="div" className="hover-glow page-form-card" delay={0}>
               <h3 style={{ color: 'var(--ink)', marginBottom: '24px' }}>Send us a Message</h3>
               <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={e => e.preventDefault()}>
@@ -44,7 +44,7 @@ export default function Contact() {
                 <h4 style={{ color: 'var(--gold)', marginBottom: '8px' }}>Email Support</h4>
                 <p style={{ color: 'var(--ink)' }}>Support@exploremarketslimited.com</p>
               </Reveal>
-              
+
               <Reveal as="div" className="hover-lift contact-info-card" delay={300}>
                 <h4 style={{ color: 'var(--gold)', marginBottom: '8px' }}>Phone</h4>
                 <p style={{ color: 'var(--ink)' }}>+44 7459333264</p>
@@ -52,7 +52,7 @@ export default function Contact() {
 
               <Reveal as="div" className="hover-lift contact-info-card" delay={400}>
                 <h4 style={{ color: 'var(--gold)', marginBottom: '8px' }}>Registered Address</h4>
-                <p style={{ color: 'var(--muted)' }}>Unit 1, La Place Creole Building, Rodney Village, Rodney Bay, Gros-Islet, Saint Lucia.</p>
+                <p style={{ color: 'var(--muted)' }}>Ground Floor, La Place Creole Building, Rodney Village, Rodney Bay, Gros-Islet, Saint Lucia.</p>
               </Reveal>
             </div>
 

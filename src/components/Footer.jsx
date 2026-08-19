@@ -153,7 +153,7 @@ export default function Footer() {
             </div>
             <div className="cd-box">
               <span className="cd-label">Registered Address</span>
-              <span className="cd-value">Unit 1, La Place Creole Building, Rodney Village, Rodney Bay, Gros-Islet, Saint Lucia.</span>
+              <span className="cd-value">Ground Floor, La Place Creole Building, Rodney Village, Rodney Bay, Gros-Islet, Saint Lucia.</span>
             </div>
             <div className="cd-box">
               <span className="cd-label">Physical Office Address</span>
